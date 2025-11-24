@@ -1,0 +1,242 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: white
+}
+
+body.dark-mode {
+  background: #222;
+  color: #ddd;
+}
+
+body.dark-mode .header,
+body.dark-mode footer {
+  background: #444;
+  color: white;
+}
+
+body.dark-mode .navbar {
+  background: #333;
+}
+
+body.dark-mode .navbar a {
+  color: white;
+}
+
+.theme-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 10px;
+  background: black;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.header {
+  background-color: #000DFF;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  align-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-right: 20px;
+  background-image: url('graduation.jpg');
+  background-size: cover;
+  background-position: center;
+
+}
+
+
+
+.main {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  gap: 20px;
+  align-items: center;
+  padding: 20px;
+  background: lightcoral;
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #000DFF;
+  background: lightskyblue;
+  box-shadow: 0 0 4px blueviolet;
+  border-radius: 20px;
+}
+
+.main {
+  background: lightcoral;
+  display: flex;
+  padding: 12px;
+  border-radius: 10px;
+  gap: 40px;
+  margin: 20px 20px;
+  justify-content: space-between;
+
+}
+
+.events {
+  padding: 20px 20px;
+}
+
+
+
+
+footer {
+  background: lightblue;
+  text-align: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  border-radius: 20px;
+  margin-top: 300px;
+}
+
+.content {
+  background: rgb(221, 238, 144);
+  flex: 1;
+  padding-top: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  color: blue;
+}
+
+.scroll-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px;
+  scroll-snap-type: x mandatory;
+}
+
+.scroll-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.scroll-container::-webkit-scrollbar-thumb {
+  background: gray;
+  border-radius: 10px;
+}
+
+.event-card {
+  display: flex;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: 0.3s;
+  min-width: 220px;
+  border-radius: 12px;
+  box-shadow: 0 5px black;
+  gap: 20px;
+  border-color: black;
+  margin: 20px 20px;
+  background: hwb(0 100% 0%);
+
+
+}
+
+.card-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-image img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease;
+}
+
+.event-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-title {
+  margin: 0 0 10px 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.card-content {
+  padding: 20px;
+  color: gray;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.card-button {
+  display: flexbox;
+  background-color: blue;
+  color: whitesmoke;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.4s ease;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.card-button:hover {
+  background-color: blue;
+}
+
+@media (max-width: 768px) {
+  .scroll-container {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 400px;
+  }
+
+  .event-card {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    font-size: 20px;
+    padding: 15px 0;
+  }
+
+  .main {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+  }
+
+  .event-card {
+    min-width: 100%;
+  }
+
+
+}
+
+@media (min-width: 1200px) {
+  .main {
+    padding: 40px;
+    gap: 60px;
+  }
+
+  .event-card {
+    min-width: 300px;
+  }
+}
